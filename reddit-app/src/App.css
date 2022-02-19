@@ -1,0 +1,23 @@
+li {
+  list-style-type: none;
+  width: 50%;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  width: 100%;
+}
+
+h2 {
+  font-size: 32px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-size: 20px;
+}
