@@ -2,7 +2,7 @@ import {v4} from 'uuid';
 var auth;
 const state = v4();
 const clientID = "U9g_qwSTfjs9q7lQNHeNEA";
-const redirectURI = "http://localhost:3000/";
+const redirectURI = "https://suscodered.netlify.app";
 const Reddit = {
     async search(term) {
         const accessToken = Reddit.getAccessToken();
