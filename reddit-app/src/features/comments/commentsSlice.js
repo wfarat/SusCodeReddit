@@ -1,27 +1,27 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Reddit from '../../util/reddit/Reddit';
 
-export const loadArticles = createAsyncThunk('articles/loadArticles', 
+export const loadComments = createAsyncThunk('comments/loadComments', 
 async (data) => { 
-    const res = await Reddit.getArticles(data);
+    const res = await Reddit.getComments(data);
     return res;
 })
-const articlesSlice = createSlice({
-    name: 'articles',
+const commentsSlice = createSlice({
+    name: 'comments',
     initialState: {data: {}, status: 'idle'},
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(loadArticles.pending, (state) => {
+            .addCase(loadComments.pending, (state) => {
                 state.status = 'pending'
             })
-            .addCase(loadArticles.fulfilled, (state,action) => {
+            .addCase(loadComments.fulfilled, (state,action) => {
                 state.status = 'idle';
                 state.data = {};
                 action.payload.map(ar => state.data[ar.id] = ar)
             })
     }    
 })
-export const selectArticles = (state) => state.articles.data;
-export const selectStatus = (state) => state.articles.status;
-export default articlesSlice.reducer;
+export const selectComments = (state) => state.comments.data;
+export const selectStatus = (state) => state.comments.status;
+export default commentsSlice.reducer;

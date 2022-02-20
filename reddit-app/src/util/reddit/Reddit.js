@@ -41,11 +41,31 @@ const Reddit = {
                 score: ar.data.score,
                 title: ar.data.title,
                 selftext: ar.data.selftext,
-                media: ar.data.media_embed
+                media: ar.data.media_embed,
+                thumbnail: ar.data.thumbnail,
+                comments: ar.data.num_comments
             }
             return obj;
         })
         return articles;
+    },
+    async getComments(id) {
+        const accessToken = Reddit.getAccessToken();
+        const urlToFetch = 'https:/oauth.reddit.com/comments/' + id + '?limit=50';
+        const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
+        const responseJson = await response.json();
+        console.log(responseJson);
+        let comments = responseJson[1].data.children.map(com => {
+            let obj = {
+             id: com.data.id,
+             author: com.data.author,
+             body: com.data.body,
+             score: com.data.score,
+             replies: com.data.replies? com.data.replies.data.children : []
+            }
+            return obj;
+        })
+        return comments;
     },
     getAccessToken() {
         if (auth) {

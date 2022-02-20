@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import Subreddits  from './features/subreddits/Subreddits';
 import Subreddit from './features/subreddits/Subreddit';
 import Articles from './features/articles/Articles';
+import Article from './features/articles/Article';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
@@ -17,8 +18,11 @@ ReactDOM.render(
             <Route path="/" element={<App />}>
               <Route path="r" element={<Subreddits />} />
               <Route path="/r/:sub" element={<Subreddit />} />
-              <Route path="hot" element={<Articles type="hot"/>}/>
+              <Route path="/r/:sub/:article" element={<Article />}/>
+              <Route path="hot" element={<Articles type="hot"/>}/>         
               <Route path="new" element={<Articles type="new" />}/>
+              <Route path="/hot/:article" element={<Article />}/>
+              <Route path="/new/:article" element={<Article />}/>
             </Route>
         </Routes>
         </Router>
