@@ -6,7 +6,7 @@ const redirectURI = "https://suscodered.netlify.app";
 const Reddit = {
     async search(term) {
         const accessToken = Reddit.getAccessToken();
-        const urlToFetch = 'https:/oauth.reddit.com/api/subreddit_autocomplete?query=' + term + '&include_profiles=false';
+        const urlToFetch = 'https://oauth.reddit.com/api/subreddit_autocomplete?query=' + term + '&include_profiles=false';
         const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
         const responseJson = await response.json();
         if (responseJson.subreddits.length === 0) {
@@ -27,9 +27,9 @@ const Reddit = {
         const accessToken = Reddit.getAccessToken();
         let urlToFetch;
         if (data.sub) {
-         urlToFetch = 'https:/oauth.reddit.com/r/' + data.sub + '/' + data.type + '?limit=20';
+         urlToFetch = 'https://oauth.reddit.com/r/' + data.sub + '/' + data.type + '?limit=20';
         } else {
-        urlToFetch = 'https:/oauth.reddit.com/' + data.type + '?limit=20';
+        urlToFetch = 'https://oauth.reddit.com/' + data.type + '?limit=20';
         }
         const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
         const responseJson = await response.json();
@@ -51,7 +51,7 @@ const Reddit = {
     },
     async getComments(id) {
         const accessToken = Reddit.getAccessToken();
-        const urlToFetch = 'https:/oauth.reddit.com/comments/' + id + '?limit=50';
+        const urlToFetch = 'https://oauth.reddit.com/comments/' + id + '?limit=50';
         const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
         const responseJson = await response.json();
         console.log(responseJson);
