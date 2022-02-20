@@ -15,7 +15,7 @@ function App() {
           <ul>
             <li><Link to="r">Subreddits</Link></li>
             <li><Link to="hot">Hot</Link></li>
-            <li><Link to="random">Random</Link></li>
+            <li><Link to="new">New</Link></li>
           </ul>
         </nav>
       </header>

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import hotSlice from '../features/hot/hotSlice';
+import articlesSlice from '../features/articles/articlesSlice';
 import subredditsSlice from '../features/subreddits/subredditsSlice';
 export const store = configureStore({
   reducer: {
     subreddits: subredditsSlice,
-    hot: hotSlice,
+    articles: articlesSlice,
   },
 });

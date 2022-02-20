@@ -23,9 +23,14 @@ const Reddit = {
         })
         return subreddits;
     },
-    async hot() {
+    async getArticles(data) {
         const accessToken = Reddit.getAccessToken();
-        const urlToFetch = 'https:/oauth.reddit.com/hot?limit=10';
+        let urlToFetch;
+        if (data.sub) {
+         urlToFetch = 'https:/oauth.reddit.com/r/' + data.sub + '/' + data.type + '?limit=20';
+        } else {
+        urlToFetch = 'https:/oauth.reddit.com/' + data.type + '?limit=20';
+        }
         const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
         const responseJson = await response.json();
         console.log(responseJson);
@@ -36,6 +41,7 @@ const Reddit = {
                 score: ar.data.score,
                 title: ar.data.title,
                 selftext: ar.data.selftext,
+                media: ar.data.media_embed
             }
             return obj;
         })

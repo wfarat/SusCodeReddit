@@ -6,7 +6,8 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import Subreddits  from './features/subreddits/Subreddits';
-import Hot from './features/hot/Hot';
+import Subreddit from './features/subreddits/Subreddit';
+import Articles from './features/articles/Articles';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
@@ -14,8 +15,10 @@ ReactDOM.render(
     <Router>
           <Routes>
             <Route path="/" element={<App />}>
-              <Route path="r" element={<Subreddits />}/>
-              <Route path="hot" element={<Hot />}/>
+              <Route path="r" element={<Subreddits />} />
+              <Route path="/r/:sub" element={<Subreddit />} />
+              <Route path="hot" element={<Articles type="hot"/>}/>
+              <Route path="new" element={<Articles type="new" />}/>
             </Route>
         </Routes>
         </Router>
