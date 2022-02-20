@@ -23,12 +23,23 @@ const Reddit = {
         })
         return subreddits;
     },
-    async hot(subreddit) {
+    async hot() {
         const accessToken = Reddit.getAccessToken();
-        const urlToFetch = 'https:/oauth.reddit.com/r/' + subreddit + '/hot?limit=5';
+        const urlToFetch = 'https:/oauth.reddit.com/hot?limit=10';
         const response = await fetch (urlToFetch, {headers: {Authorization: `bearer ${accessToken}`}});
         const responseJson = await response.json();
         console.log(responseJson);
+        let articles = responseJson.data.children.map(ar => {
+            let obj = {
+                id: ar.data.id,
+                url: ar.data.url,
+                score: ar.data.score,
+                title: ar.data.title,
+                selftext: ar.data.selftext,
+            }
+            return obj;
+        })
+        return articles;
     },
     getAccessToken() {
         if (auth) {

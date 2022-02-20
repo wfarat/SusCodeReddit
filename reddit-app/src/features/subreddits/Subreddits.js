@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 import { selectSubreddits } from "./subredditsSlice";
-
+import Search from "../../compontents/search/Search";
 
 export default function Subreddits() {
     const subreddits = useSelector(selectSubreddits);
     const img = "https://www.redditstatic.com/avatars/avatar_default_17_DDBD37.png";
     return (
         <section className="subreddits">
+            <Search />
             <ul className="subreddits-list">
                 {subreddits.map(sub => {
                     return (

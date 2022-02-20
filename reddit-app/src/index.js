@@ -5,11 +5,20 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-
+import Subreddits  from './features/subreddits/Subreddits';
+import Hot from './features/hot/Hot';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <Router>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route path="r" element={<Subreddits />}/>
+              <Route path="hot" element={<Hot />}/>
+            </Route>
+        </Routes>
+        </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

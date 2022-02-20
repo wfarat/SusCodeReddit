@@ -2,9 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import './reset.css';
 import './App.css';
-import Search from './compontents/search/Search';
-import Subreddits from './features/subreddits/Subreddits';
 import Reddit from './util/reddit/Reddit';
+import { Link, Outlet } from 'react-router-dom';
 function App() {
   useEffect(() => {
     window.addEventListener('load', () => {Reddit.getAccessToken()});
@@ -12,11 +11,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Search />
+        <nav>
+          <ul>
+            <li><Link to="r">Subreddits</Link></li>
+            <li><Link to="hot">Hot</Link></li>
+            <li><Link to="random">Random</Link></li>
+          </ul>
+        </nav>
       </header>
-      <main className="App-main">
-        <Subreddits />
-      </main>
+      <Outlet />
     </div>
   );
 }
