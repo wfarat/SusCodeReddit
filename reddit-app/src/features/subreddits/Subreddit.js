@@ -5,9 +5,11 @@ export default function Subreddit() {
     let params = useParams();
     const [type, setType] = useState('hot');
     return (
-        <div className="subreddit">
+        <div className="subreddit-container">
+            <div className="sub-nav">
             <button onClick={()=> setType('hot')}>Hot</button>
             <button onClick={()=> setType('new')}>New</button>
+            </div>
             <Articles sub={params.sub} type={type} />
         </div>
     )

@@ -1,0 +1,47 @@
+.subreddits-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subreddits {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.subreddit {
+    text-align: center;
+    border: 3px solid white;
+    color: black;
+    background-color: burlywood;
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+}
+
+.subreddit h2 {
+    font-size: 24px;
+}
+
+.sub-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.sub-nav button {
+    padding: 15px;
+    background-color: burlywood;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.sub-nav input {
+    padding: 15px;
+}
+.subreddit-container {
+    margin-top: 20px;
+}
+
+.search h2 {
+    font-size: 24px;
+    color: white;
+}

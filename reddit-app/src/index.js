@@ -21,8 +21,10 @@ ReactDOM.render(
               <Route path="/r/:sub/:article" element={<Article />}/>
               <Route path="hot" element={<Articles type="hot"/>}/>         
               <Route path="new" element={<Articles type="new" />}/>
+              <Route path="top" element={<Articles type="top" />}/>
               <Route path="/hot/:article" element={<Article />}/>
               <Route path="/new/:article" element={<Article />}/>
+              <Route path="/top/:article" element={<Article />}/>
             </Route>
         </Routes>
         </Router>

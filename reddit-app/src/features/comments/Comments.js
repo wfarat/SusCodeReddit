@@ -10,21 +10,23 @@ export default function Comments(props) {
         dispatch(loadComments(props.id));
     }, [dispatch, props.id]);
     return (
-        <section className="articles-section">
+        <section className="comments-section">
             {status === "pending" && <p>Loading...</p>}
-            <ul className="articles-list">
+            <ul className="comments-list">
                 {Object.values(comments).map(com => {
                     return (
                         <li key={com.id} className="comment">
-                        <h3>{com.author}</h3>
+                            <div className="comment-container">
+                        <h3>Author: {com.author}</h3>
                         <p>{com.body}</p>
                         <p>Upvotes: {com.score}</p>
+                        </div>
                         <ul className="replies">
                         {com.replies.map(reply => {
                         if (reply.kind === "t1") {    
                         return (
                         <li key={reply.data.id} className="comment-reply">
-                        <h3>{reply.data.author}</h3>
+                        <h3>Author: {reply.data.author}</h3>
                         <p>{reply.data.body}</p>
                         <p>Upvotes: {reply.data.score}</p>
                         </li> ) } else {

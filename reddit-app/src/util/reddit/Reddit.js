@@ -2,7 +2,7 @@ import {v4} from 'uuid';
 var auth;
 const state = v4();
 const clientID = "U9g_qwSTfjs9q7lQNHeNEA";
-const redirectURI = "https://suscodered.netlify.app";
+const redirectURI = "https://suscodered.netlify.app/";
 const Reddit = {
     async search(term) {
         const accessToken = Reddit.getAccessToken();
@@ -41,8 +41,9 @@ const Reddit = {
                 score: ar.data.score,
                 title: ar.data.title,
                 selftext: ar.data.selftext,
-                media: ar.data.media_embed,
+                media: ar.data.media,
                 thumbnail: ar.data.thumbnail,
+                author: ar.data.author,
                 comments: ar.data.num_comments
             }
             return obj;

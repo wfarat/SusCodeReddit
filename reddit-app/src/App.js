@@ -13,9 +13,10 @@ function App() {
       <header className="App-header">
         <nav>
           <ul>
-            <li><Link to="r">Subreddits</Link></li>
-            <li><Link to="hot">Hot</Link></li>
-            <li><Link to="new">New</Link></li>
+            <li className='nav'><Link to="r">Subreddits</Link></li>
+            <li className='nav'><Link to="hot">Hot</Link></li>
+            <li className='nav'><Link to="new">New</Link></li>
+            <li className='nav'><Link to="top">Top</Link></li>
           </ul>
         </nav>
       </header>

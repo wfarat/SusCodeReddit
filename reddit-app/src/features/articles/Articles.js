@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { loadArticles, selectArticles, selectStatus } from "./articlesSlice";
+import "./articles.css";
 export default function Articles(props) {
     const newAr = useSelector(selectArticles);
     const status = useSelector(selectStatus);
@@ -21,10 +22,15 @@ export default function Articles(props) {
                     return (
                         <Link to={ar.id} key={ar.id}>
                         <li key={ar.id} className="article">
+                        <div className="desc">
                         <h3>{ar.title}</h3>
+                        <p>Author: {ar.author}</p>
                         <img src={ar.thumbnail} alt="" />
+                        </div>
+                        <div className="scores">
                         <p>Upvotes: {ar.score}</p>
                         <p>Comments: {ar.comments}</p>
+                        </div>
                         </li>
                         </Link>
                     )
