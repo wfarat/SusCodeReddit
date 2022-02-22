@@ -1,8 +1,8 @@
 .comment {
     display: grid;
     grid-template-columns: 100px auto;
+    max-width: 1200px;
     background-color: burlywood;
-    color: blue;
 }
 
 .comment p {
@@ -11,7 +11,6 @@
 .replies {
     grid-column: 2 / 3;
     background-color: burlywood;
-    color: green;
 }
 
 .comment-container {

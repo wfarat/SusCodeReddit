@@ -50,3 +50,11 @@ h2 {
 .upvotes {
     color: white;
 }
+
+.article-container img {
+    width: 100%;
+}
+
+.article-container p {
+    color: white;
+}
