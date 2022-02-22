@@ -9,6 +9,7 @@ export default function Subreddit() {
             <div className="sub-nav">
             <button onClick={()=> setType('hot')}>Hot</button>
             <button onClick={()=> setType('new')}>New</button>
+            <button onClick={()=> setType('top')}>Top</button>
             </div>
             <Articles sub={params.sub} type={type} />
         </div>
