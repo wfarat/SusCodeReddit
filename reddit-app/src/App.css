@@ -12,3 +12,7 @@ nav li {
   padding: 10px;
   list-style-type: none;
 }
+
+.App {
+  max-width: 100%;
+}
