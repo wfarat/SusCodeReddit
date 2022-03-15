@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="main-header">Reddit App</h1>
         <nav>
           <ul>
             <li className='nav'><Link to="r">Subreddits</Link></li>
