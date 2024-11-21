@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SusCodecademy/static/css/main.1c3c4a47.css",
+    "main.js": "/SusCodecademy/static/js/main.1b0fd4db.js",
+    "index.html": "/SusCodecademy/index.html",
+    "main.1c3c4a47.css.map": "/SusCodecademy/static/css/main.1c3c4a47.css.map",
+    "main.1b0fd4db.js.map": "/SusCodecademy/static/js/main.1b0fd4db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c3c4a47.css",
+    "static/js/main.1b0fd4db.js"
+  ]
+}
